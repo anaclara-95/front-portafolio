@@ -1,0 +1,32 @@
+
+nav{
+    
+    background: transparent;
+}
+.button{
+    margin-left: 55%;
+   justify-content: flex-end !important; 
+
+}
+.img-p{
+    width:25%;
+}
+i{
+    width: 150px;
+    background: transparent;
+}
+a{ background: transparent;
+   
+    margin-left: 15px;
+}
+
+@keyframes example {
+    from {
+        transform: scale(0)}
+    to { transform: scale(1)   }
+  }
+*{
+  
+    animation-name: example;
+    animation-duration: 4s;
+  }
