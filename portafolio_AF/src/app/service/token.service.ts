@@ -25,23 +25,23 @@ public getToken(): string {
   return sessionStorage.getItem(TOKEN_KEY)!;
 }
 
-public setUserName(userName: string): void {
+public setUserName(nombreUsuario: string): void {
   window.sessionStorage.removeItem(USERNAME_KEY);
-  window.sessionStorage.setItem(USERNAME_KEY, userName);
+  window.sessionStorage.setItem(USERNAME_KEY, nombreUsuario);
 }
 public getUserName(): string {
   return sessionStorage.getItem(USERNAME_KEY)!;
 }
 public setAuthorities(authorities: string[]): void {
   window.sessionStorage.removeItem(AUTHORITIES_KEY);
-  window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities))
+  window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
 }
 
 public getAuthorities(): string[] {
   this.roles = [];
   if (sessionStorage.getItem(AUTHORITIES_KEY)) {
     JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY)).forEach((authority: any) => {
-      this.roles.push(authority.authorities)
+      this.roles.push(authority.authorities);
       
     });
 

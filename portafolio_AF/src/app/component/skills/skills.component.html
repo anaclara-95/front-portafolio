@@ -1,48 +1,22 @@
   <h2>Skills & Habilities</h2>
   <div class="container">
     <div class="sk">
-      <div class="col-sm-2 col-md-3 col-lg-3 " >
+    </div>
+    <div class="skill col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skills">
+      <div col-xs-4 col-sm-4 col-md-4 >
+      <circle-progress 
+      [percent]="skill.porcS" 
+      [radius]="50" 
       
-        <circle-progress 
-        [percent]="52" 
-        [radius]="50" 
-        [showUnits]="true" 
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="3"
-        [outerStrokeColor]="'#ee99aa'" 
-        [innerStrokeColor]="'#a6fff2'" 
-        [animation]="true"
-        [animationDuration]="500"></circle-progress>
-        <h4>skiill</h4>
-      </div>
-      <div class="col-sm-2 col-md-3 col-lg-3 align-self-center" >
-        <circle-progress 
-        [percent]="52" 
-        [radius]="50" 
-        [showUnits]="true" 
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="3"
-        [outerStrokeColor]="'#ee99aa'" 
-        [innerStrokeColor]="'#a6fff2'" 
-        [animation]="true"
-        [animationDuration]="500"></circle-progress>
-        <h4>skiill</h4>
-      </div>
-      <div class="col-sm-2 col-md-3 col-lg-4" >
-       
-        <circle-progress 
-        [percent]="52" 
-        [radius]="50" 
-        
-        [showUnits]="true" 
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="3"
-        [outerStrokeColor]="'#ee99aa'" 
-        [innerStrokeColor]="'#a6fff2'" 
-        [animation]="true"
-        [animationDuration]="500"></circle-progress>
-        <h4>skiill</h4>
-      </div>
+      [showUnits]="true" 
+      [outerStrokeWidth]="10"
+      [innerStrokeWidth]="3"
+      [outerStrokeColor]="'#ee99aa'" 
+      [innerStrokeColor]="'#a6fff2'" 
+      [animation]="true"
+      [animationDuration]="500"></circle-progress>
+      <h4>{{skill.nameSK}} </h4>
+    </div>
     </div>
     
     </div>
