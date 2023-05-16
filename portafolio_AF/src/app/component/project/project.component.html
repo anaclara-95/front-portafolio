@@ -1,20 +1,29 @@
 <article>
-    <h2>Proyectos</h2>
-    <div  class="d-flex justify-content-end">
-      <button type="button" class="btn btn-primary"><i class="bi bi-plus-circle"></i></button>
-  <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-  <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>  
+  <h2>Proyectos</h2>
+  <div class="d-flex justify-content-center" *ngIf="isAdmin.length >1">
+
+    <button type="button" class="btn btn-primary"><i class="bi bi-plus-circle" routerLink="/newProj"></i></button>
+
   </div>
-<div class="card  text-white col-8" style="max-width: 700px;">
-    
-    <figure class="img-fluit col-12  ">
-    <img src="https://wallpapercave.com/wp/wp10167060.jpg" class="card-img img-thumbnail" alt="...">
-</figure>
-    <div class="card-img-overlay " id="cards" >
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text">Last updated 3 mins ago</p>
+  <div class="card  d-flex justify-content-center text-white col-lg-12" *ngFor="let pro of proj "
+    style="text-align: center;" style="max-width: 900px; margin-left: 15%; text-align: center;">
+
+    <figure class="img-fluit col-12  " >
+      <img src="{{pro.imgP}}" class="card-img img-thumbnail" alt="{{pro.nameP}}">
+    </figure>
+    <div class="card-img-overlay text-aling-center" id="cards">
+      <h2 class="card-title">{{pro.nameP}}</h2>
+      <h4 class="card-text">{{pro.descP}} </h4>
+      <div class="">
+        <button class="btn btn-warning" ><a href="{{pro.urlcP}}">Git</a></button> <br>
+        <button class="btn btn-warning" ><a href="{{pro.urlpP}}">Pagina/exe</a></button>
+      </div>
+      <div class="col-4 justify-content-end " *ngIf="isAdmin.length >1" style=" background: transparent !important;">
+        <button type="button" class="btn btn-success" routerLink="EProj/{{pro.id}}"><i class="bi bi-pencil-square"></i></button>
+        <button type="button" class="btn btn-danger" (click)="delete(pro.id)"><i class="bi bi-trash3"></i></button>
+      </div>
     </div>
+
   </div>
 
 </article>

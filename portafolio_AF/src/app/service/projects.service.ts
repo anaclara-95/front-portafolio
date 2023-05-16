@@ -8,7 +8,7 @@ import { Projects } from '../model/projects.model';
 })
 export class ProjectsService {
 
-  URL = 'http://localhost:8080/projects/';
+  URL = 'https://portafolioaf-b.onrender.com/projects/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,10 +23,10 @@ export class ProjectsService {
    }
 
    public save(proj:Projects): Observable<any>{
-    return this.httpClient.post<any>(this.URL + '/create', proj);
+    return this.httpClient.post<any>(this.URL + 'create', proj);
       }
 
       public delete (id:number):Observable<any>{
-        return this.httpClient.delete<any>(this.URL+`/delete/${id}`);
+        return this.httpClient.delete<any>(this.URL+`delete/${id}`);
       }
 }

@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  skill : Skills[]= [];
+  skills : Skills[]= [];
  
   constructor(private Login : TokenService , private skillsService : SkillsService, private tokenService: TokenService) { }
   isAdmin:any;
@@ -24,7 +24,7 @@ export class SkillsComponent implements OnInit {
       }
     }
 chargeSkill():void{
-  this.skillsService.lista().subscribe(data => { this.skill = data;})
+  this.skillsService.lista().subscribe(data => { this.skills = data;})
   }
  delete(id? : number ){
   if(id != undefined){

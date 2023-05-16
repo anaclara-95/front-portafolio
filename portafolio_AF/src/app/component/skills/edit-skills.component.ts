@@ -11,6 +11,7 @@ import { SkillsService } from 'src/app/service/skills.service';
 export class EditSkillsComponent implements OnInit {
 
   skill : Skills;
+  
   constructor(private skillService: SkillsService, private activatedRouter: ActivatedRoute , private router: Router) { }
 
   ngOnInit(): void {

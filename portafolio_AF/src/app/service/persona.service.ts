@@ -7,7 +7,7 @@ import { Persona} from '../model/Persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-URL = 'http://localhost:8080/persona/';
+URL = 'https://portafolioaf-b.onrender.com/persona/';
 
   constructor(private httpClient: HttpClient) { } 
 
@@ -22,11 +22,11 @@ public update(id: number, per :Persona):Observable<any>{
  }
 
  public save(per : Persona): Observable<any>{
-  return this.httpClient.post<any>(this.URL + '/create', per);
+  return this.httpClient.post<any>(this.URL + 'create', per);
 }
 
 public delete (id:number):Observable<any>{
-  return this.httpClient.delete<any>(this.URL+`/delete/${id}`);
+  return this.httpClient.delete<any>(this.URL+`delete/${id}`);
 }
 
 }

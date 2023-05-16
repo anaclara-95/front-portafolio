@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/Persona.model';
 import { ImageService } from 'src/app/service/image.service';
 import { PersonaService } from 'src/app/service/persona.service';
-import { TokenService } from 'src/app/service/token.service';
+
 
 @Component({
   selector: 'app-edit-about',
@@ -38,7 +38,7 @@ this.perService.update(1, this.persona).subscribe(data => {
 uploadImg($event : any){
 const id =this.activatedRouter.snapshot.params['1'];
 const name = "perfil_"+ 1;
-//this.imageServ.uploadImg($event, name);
+this.imageServ.uploadImg($event, name);
 }
 
 }

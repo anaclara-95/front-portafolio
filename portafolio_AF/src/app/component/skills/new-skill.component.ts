@@ -9,9 +9,9 @@ import { SkillsService } from 'src/app/service/skills.service';
   styleUrls: ['./new-skill.component.css']
 })
 export class NewSkillComponent implements OnInit {
-
+  
   nameSk: string;
-  porcS: string;
+  porcS: number;
 
 
   constructor(private skillsService: SkillsService, private router: Router) { }
@@ -19,8 +19,8 @@ export class NewSkillComponent implements OnInit {
   ngOnInit(): void {
   }
   onCreate(): void {
-    const skill = new Skills(this.nameSk, this.porcS);
-    this.skillsService.save(skill).subscribe(data => {
+    const skills = new Skills(this.nameSk, this.porcS);
+    this.skillsService.save(skills).subscribe(data => {
       alert("la habilidad  " + this.nameSk + "se a creado exitosamente");
       this.router.navigate(['']);
     }, err => {

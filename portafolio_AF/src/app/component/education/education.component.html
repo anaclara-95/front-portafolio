@@ -1,38 +1,36 @@
-<Article>
+<Article >
     <h2>Educación</h2>
-    <div  class="d-flex justify-content-end">
-      <button type="button" class="btn btn-primary"><i class="bi bi-plus-circle"></i></button>
-  <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-  <button type="button" class="btn btn-danger"><i class="bi bi-trash3"></i></button>  
+    <div  class=" d-flex justify-content-center " *ngIf="isAdmin.length >1">
+      <button type="button" class="btn btn-primary" routerLink="/newEducation"><i class="bi bi-plus-circle"></i></button>
+    
   </div>
-<div class="d-flex justify-content-center">
-<table class="table table-hover" style="max-width: 700px;">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table></div>
+  <div class="d-flex edu" *ngFor="let ed of edu" style="background: transparent !important;">
+  <div class="accordion justify-content-center edu-ac col-12" id="accordionExample" >
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Education" aria-expanded="true" aria-controls="collapseOne" style="background: transparent;">
+         {{ed.eduI}}
+        </button>
+      </h2>
+      <div id='Education'  class="accordion-collapse collapse show" data-bs-parent="#accordionEdu" style="background-color: transparent; color: blueviolet;">
+        <div class="accordion-body">
+          <h3>Titulo</h3>
+          <p><b>{{ed.eduT}} </b></p>
+          <h3>Fecha</h3>
+          <p><b>{{ed.eduDI}} - {{ed.eduDF}} </b> </p>
+          <h3>Descripción</h3>
+          <p><b>{{ed.eduDesc}} </b> </p>
+          
+        </div>
+        <div *ngIf="isAdmin.length >1">
+          <button type="button" class="btn btn-success" routerLink="/editEducation/{{ed.id}}"><i class="bi bi-pencil-square"></i></button>
+  <button type="button" class="btn btn-danger" (click)="delete(ed.id)"><i class="bi bi-trash3"></i></button>
+      
+        </div>
+        </div>
+    </div>
+    
+  </div>  
+  </div>
+  
 </Article>

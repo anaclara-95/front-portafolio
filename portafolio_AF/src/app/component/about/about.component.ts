@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/Persona.model';
 
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-about',
@@ -10,15 +11,28 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class AboutComponent implements OnInit { 
 persona :Persona = null
-constructor(public personaService: PersonaService) {  }
-ngOnInit(){
-  this.cargaP();
-  console.log(this.persona)
+constructor(public personaService: PersonaService, private tokenService: TokenService) {  }
+isLogged = false;
+isAdmin:any;
+ngOnInit(): void {
+  this.getRol();
+  this.chargePerson();
+  if (this.tokenService.getToken()) {
+    this.isLogged = true;
+  } else {
+    this.isLogged = true;
+  }
 }
-cargaP(){
-  this.personaService.detail(1).subscribe(data => { this.persona = data; console.log(this.persona)});
+chargePerson() {
+  this.personaService.detail(1).subscribe(data => { this.persona = data });
 }
+getRol(){
+  const rol: string [] =this.tokenService.getAuthorities();
+  console.log('Autho',rol);
+return (this.isAdmin=rol); }
+}
+
 
   
 
-}
+

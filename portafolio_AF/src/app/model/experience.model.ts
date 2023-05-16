@@ -13,6 +13,7 @@ export class Experience {
         this.dateI=dateI;
         this.dateF=dateF;
         this.descE=descE;
+        
        this.refE=refE;
     }
 }

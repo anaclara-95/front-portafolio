@@ -3,24 +3,24 @@
       <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
         <div class="form-outline ">
           <label class="form-label" for="nameE">Institución</label>
-          <input type="text" id="nameE" class="form-control" name="nameE" [(ngModel)]="nameE" required />
+          <input type="text" id="nameE" class="form-control" name="nameE" [(ngModel)]="eduI" required />
   
         </div>
   
         <div class="form-outline">
           <label class="form-label" for="dateI">Fecha de ingreso</label>
-          <input type="date" id="dateI" class="form-control" name="dateI" [(ngModel)]="dateI" required />
+          <input type="date" id="dateI" class="form-control" name="dateI" [(ngModel)]="eduDI" required />
   
         </div>
   
         <div class="form-outline">
           <label class="form-label" for="dateF">Fecha de egreso</label>
-          <input type="date" id="dateF" class="form-control" name="dateF" [(ngModel)]="dateF" required />
+          <input type="date" id="dateF" class="form-control" name="dateF" [(ngModel)]="eduDF" required />
   
         </div>
         <div class="form-outline">
           <label class="form-label" for="descEd">Titúlo</label>
-          <input type="text" id="descEd" class="form-control" name="descEd" [(ngModel)]="descEd" required />
+          <input type="text" id="descEd" class="form-control" name="descEd" [(ngModel)]="eduDesc" required />
   
         </div>
         <button class="btn btn-primary btn-lg btn-block" type="submit">Create</button>

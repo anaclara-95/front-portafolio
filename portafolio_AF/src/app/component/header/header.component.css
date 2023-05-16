@@ -1,18 +1,15 @@
 
 nav{
+   
     
     background: transparent;
 }
-.button{
-    margin-left: 55%;
-   justify-content: flex-end !important; 
 
-}
 .img-p{
-    width:25%;
+    width:75px;
 }
 i{
-    width: 150px;
+    width: 300px;
     background: transparent;
 }
 a{ background: transparent;

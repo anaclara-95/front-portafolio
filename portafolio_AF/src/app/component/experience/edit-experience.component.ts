@@ -25,7 +25,7 @@ export class EditExperienceComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
   this.expService.update(id, this.exp).subscribe( data => {
     alert("actualizacion exitosa");
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }, err => {
     alert("error al actualizar");
     this.router.navigate(['']);

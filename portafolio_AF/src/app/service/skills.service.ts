@@ -8,7 +8,7 @@ import { Skills } from '../model/skills.model';
 })
 export class SkillsService {
 
-  URL = 'http://localhost:8080/skills/';
+  URL = 'https://portafolioaf-b.onrender.com/skills/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,10 +23,10 @@ export class SkillsService {
    }
 
    public save(sk:Skills): Observable<any>{
-    return this.httpClient.post<any>(this.URL + '/create', sk);
+    return this.httpClient.post<any>(this.URL + 'create', sk);
       }
 
       public delete (id:number):Observable<any>{
-        return this.httpClient.delete<any>(this.URL+`/delete/${id}`);
+        return this.httpClient.delete<any>(this.URL+`delete/${id}`);
       }
 }

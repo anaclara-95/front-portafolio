@@ -1,23 +1,26 @@
+<article >
   <h2>Skills & Habilities</h2>
-  <div class="container">
-    <div class="sk">
-    </div>
+  <div class=" d-flex justify-content-center" *ngIf="isAdmin.length >1" style="align-items: center;">
+
+    <button type="button" class="btn btn-primary" routerLink="/newSkill"><i class="bi bi-plus-circle"></i></button>
+  </div>
+  <div class="sk justify-content-center">
+
     <div class="skill col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skills">
-      <div col-xs-4 col-sm-4 col-md-4 >
-      <circle-progress 
-      [percent]="skill.porcS" 
-      [radius]="50" 
-      
-      [showUnits]="true" 
-      [outerStrokeWidth]="10"
-      [innerStrokeWidth]="3"
-      [outerStrokeColor]="'#ee99aa'" 
-      [innerStrokeColor]="'#a6fff2'" 
-      [animation]="true"
-      [animationDuration]="500"></circle-progress>
-      <h4>{{skill.nameSK}} </h4>
-    </div>
-    </div>
-    
+      <div class="col-xs-4 col-sm-4 col-md-4" style="text-align: center;">
+        <circle-progress [percent]="skill.porcS" [radius]="50" [showUnits]="true" [outerStrokeWidth]="10"
+          [innerStrokeWidth]="3" [outerStrokeColor]="'#ee99aa'" [innerStrokeColor]="'#a6fff2'" [animation]="true"
+          [animationDuration]="500"></circle-progress>
+        <h4>{{skill.nameSk}}</h4>
+        <div *ngIf="isAdmin.length >1">
+          <button type="button" class="btn btn-success" routerLink="/editSkill/{{skill.id}}"><i
+              class="bi bi-pencil-square"></i></button>
+          <button type="button" class="btn btn-danger" (click)="delete(skill.id)"><i class="bi bi-trash3"></i></button>
+
+        </div>
+
+      </div>
     </div>
 
+  </div>
+</article>

@@ -1,3 +1,12 @@
 h2{
     text-align: center;
 }
+div{
+    background: transparent !important;
+    color: rgb(46, 138, 53);
+    text-align: center;
+   
+}
+.accordion-button{
+    background: rgb(41, 136, 139) !important;
+}

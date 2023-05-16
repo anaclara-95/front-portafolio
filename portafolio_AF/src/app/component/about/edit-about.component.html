@@ -2,25 +2,25 @@
     <div class="container col-6" style="border-radius: 10px;" *ngIf="persona">
       <form (ngSubmit)="onEdit()" novalidate #f="ngForm">
         <div class="form-outline ">
-          <label class="form-label" for="nameE">Nombre/s</label>
-          <input type="text" id="name" class="form-control" name="nameE" [(ngModel)]="persona.name" required />
+          <label class="form-label" for="name">Nombre/s</label>
+          <input type="text" id="name" class="form-control" name="name" [(ngModel)]="persona.name" required />
   
         </div>
   
         <div class="form-outline">
-          <label class="form-label" for="dateI">Apellido/s</label>
+          <label class="form-label" for="lastName">Apellido/s</label>
           <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="persona.lastName" required />
   
         </div>
   
         <div class="form-outline">
-          <label class="form-label" for="dateF">Descripción</label>
-          <input type="text" id="descP" class="form-control" name="descP" [(ngModel)]="persona.dateI" required />
+          <label class="form-label" for="descP">Descripción</label>
+          <input type="text" id="descP" class="form-control" name="descP" [(ngModel)]="persona.descP" required />
   
         </div>
         <div class="form-outline">
-          <label class="form-label" for="imgP">Imagen Perfil</label>
-          <input type="file" id="imgP" class="form-control" name="imgP" [(ngModel)]="persona.imgPer"
+          <label class="form-label" for="imgPer">Imagen Perfil</label>
+          <input type="file" id="imgPer" class="form-control" name="imgPer" [(ngModel)]="persona.imgPer"
             (change)="uploadImg($event)" accept=".jpg, .jpeg, .png" />
   
         </div>

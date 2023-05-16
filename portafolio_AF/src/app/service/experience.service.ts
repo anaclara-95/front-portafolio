@@ -7,7 +7,7 @@ import { Experience } from '../model/experience.model';
   providedIn: 'root'
 })
 export class ExperienceService {
-  URL = 'http://localhost:8080/experience/';
+  URL = 'https://portafolioaf-b.onrender.com/experience/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,11 +22,11 @@ export class ExperienceService {
   }
 
   public save(exp: Experience): Observable<any> {
-    return this.httpClient.post<any>(this.URL + '/create', exp);
+    return this.httpClient.post<any>(this.URL + 'create', exp);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.URL + `/delete/${id}`);
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
   }
 
 

@@ -1,1 +1,41 @@
-<p>new-project works!</p>
+
+<div class="row vh-100" style="background: linear-gradient(90deg, rgba(12, 132, 192, 0.9) 0%, rgb(8, 8, 204) 50%, rgba(209, 12, 209, 0.849) 100%); width: 100%;min-height:720px;">
+    <div class="container col-6" style="border: 5px solid #000000 ; border-radius: 10px;">
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="form-outline ">
+          <label class="form-label" for="nameP">Nombre Proyecto</label>
+          <input type="text" id="nameP" class="form-control" name="nameP" [(ngModel)]="nameP" required />
+  
+        </div>
+  
+        <div class="form-outline">
+          <label class="form-label" for="descP">Descripción</label>
+          <input type="text" id="descP" class="form-control" name="descP" [(ngModel)]="descP" required />
+  
+        </div>
+  
+        <div class="form-outline">
+          <label class="form-label" for="urlcP">Link Github</label>
+          <input type="text" id="urlcP" class="form-control" name="urlcP" [(ngModel)]="urlcP" required />
+  
+        </div>
+        <div class="form-outline">
+          <label class="form-label" for="urlpP">Link Pagina/exe</label>
+          <input type="text" id="urlpP" class="form-control" name="urlpP" [(ngModel)]="urlpP" required />
+  
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Create</button>
+      </form>
+      <div class="form-outline">
+        <label class="form-label" for="imgP">Imagen Perfil</label>
+        <input type="file" id="imgP" class="form-control" name="imgP" [(ngModel)]="imgP"
+          (change)="uploadImg($event)" accept=".jpg, .jpeg, .png" />
+  
+      </div>
+      <div class="image">
+        <img [src]="imageServ.url" style="width: 100px;" alt="">
+      </div>
+      <br>
+    </div>
+  </div>
+  
