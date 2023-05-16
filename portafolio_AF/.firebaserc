@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "portafolioaf-30343": {
+      "hosting": {
+        "portafolio_AF": [
+          "portafolioaf-30343"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "portafolioaf-30343"
+  }
+}
