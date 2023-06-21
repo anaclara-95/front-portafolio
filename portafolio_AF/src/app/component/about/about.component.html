@@ -2,23 +2,24 @@
   <app-banner></app-banner>
 </figure>
 <article>
-    <h2>Sobre mí</h2>
-<div class="mb-3" *ngIf="persona" >
-    <div class="text-center g-0 d-flex" >
-      <div class="col-md-4 col-sm-3 col-lg-4 profile" >
-        <img src='{{persona.imgPer}}'  class="img fluid " alt="Anaclara-Ferrando-profile" style="max-width: 300px;">
-        <div ><h2 class="card-title">{{persona.name}} {{persona.lastName}} </h2>
-          <h3>Full Stack Developer</h3></div>
+  <h2>Sobre mí</h2>
+  <div class="mb-3 " *ngIf="persona">
+    <div class="text-center  d-flex">
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 profile">
+        <img src='{{persona.imgPer}}' class="img flit " alt="Anaclara-Ferrando-profile" style="max-width: 150px;">
+        <div>
+          <h4 class="card-title">{{persona.name}} {{persona.lastName}} </h4>
+          <h5>Full Stack Developer</h5>
+        </div>
       </div>
-      <div class="about-card   " style="margin-left: 10%;">
-        <div class="card-body " style="max-width: 540px;">
-        
-          <div class="col-md-4 col-lg-4 col-sm-3"><p class="card-text ">{{persona.descP}} </p></div>
-          
-          </div>
-          <div *ngIf="isAdmin.length >1">         
-             <button type="button" class="btn btn-success" routerLink="/editAbout/1"><i class="bi bi-pencil-square"></i></button>
-</div>
+      <div class="about-card col-xs-12 col-sm-12 col-md-8 col-lg-7 ">
+        <div class="card-body" style="max-width: 540px;">
+           <p class="card-text ">{{persona.descP}} </p>
+       </div>
+        <div *ngIf="isAdmin.length >1">
+          <button type="button" class="btn btn-success" routerLink="/editAbout/1"><i
+              class="bi bi-pencil-square"></i></button>
+        </div>
 
       </div>
     </div>
